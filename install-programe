@@ -1,0 +1,7 @@
+#!/bin/teste/bash
+
+mapfile -t myarray < fisier
+
+len=${#myarray[@]}
+
+for ((i=0; i<$len; i++ )); do epkg autoinstall ${myarray[$i]}  ; done
