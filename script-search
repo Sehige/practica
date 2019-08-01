@@ -1,0 +1,7 @@
+#! /bin/bash
+
+qlist -I > fisier-teste
+pachet="www-client/firefox"
+
+if [ ! -z $( qlist -IC | grep $pachet ) ] ; then echo "mere si asa"
+fi
