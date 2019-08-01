@@ -1,0 +1,12 @@
+#! /bin/bash
+
+mapfile -t myarray < fisier
+
+len=${#myarray[@]}
+
+for ((i=0; i<$len; i++ )); do 
+	if [ ! -z $( qlist -IC | grep ${myarray[$i]} ) ]; 
+	then echo "pachetul ${myarray[$i]} este deja instalat" 
+	else epkg autoinstall ${myarray[$i]}
+	fi;
+done
